@@ -1,0 +1,11 @@
+﻿@model Category
+    <h1>Kategori Ekleme Sayfası</h1>
+<form asp-action="CategoryAdd" method="post">
+    <div class="form-group">
+        <label class="control-label">Kategori Adı</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div>
+        <input type="submit" class="btn btn-primary" value="Ekle"/>
+    </div>
+</form>

@@ -1,0 +1,13 @@
+﻿@model List<Content>
+<div class="row">
+    @foreach (var content in ViewBag.Contents)
+    {
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@content.Title</h5>
+                <p class="card-text">@content.Article</p>
+                <a href="/Content/ContentDetail?id=@content.Id" class="btn btn-primary">Detay</a>
+            </div>
+        </div>    
+    }
+</div>

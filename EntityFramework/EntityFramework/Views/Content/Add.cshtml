@@ -1,0 +1,24 @@
+﻿@model Content
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <label class="control-label">Başlık</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="control-label">Makale</label>
+        <input asp-for="Article" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="control-label">Tarih</label>
+        <input asp-for="UpdateDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <select asp-for="Categories" asp-items="@(new SelectList(ViewBag.Categories,"Id","Name"))" multiple>
+            <option>Lütfen Kategori seçiniz...</option>
+        </select>
+    </div>
+
+    <div>
+        <input type="submit"  class="btn btn-primary" value="Ekle"/>
+    </div>
+</form>

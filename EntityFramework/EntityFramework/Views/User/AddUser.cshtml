@@ -1,0 +1,15 @@
+﻿@model User
+<h1>User Ekleme Sayfası</h1>
+<form asp-action="AddUser" method="post">
+    <div class="form-group">
+        <label class="control-label">User Name</label>
+        <input asp-for="UserName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="control-label">Password</label>
+        <input asp-for="Password" class="form-control" type="password" />
+    </div>
+    <div>
+        <input type="submit" class="btn btn-primary" value="Ekle" />
+    </div>
+</form>

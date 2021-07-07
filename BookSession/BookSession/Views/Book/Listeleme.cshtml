@@ -1,0 +1,5 @@
+﻿@model List<BookViewModel>
+@foreach (var book in Model)
+{
+<p>@book.bookName <a href="/Book/Favori/@book.bookName.Length">Fav</a> </p>
+}

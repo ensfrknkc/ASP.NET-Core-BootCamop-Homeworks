@@ -1,0 +1,12 @@
+﻿@model SearchViewModel
+<form asp-action="Search" method="post">
+    <div class="form-group">
+        <label class="control-label"> Kitap Adı</label>
+        <input asp-for="bookName" class="form-control" />
+    </div>
+    <div>
+        <input type="submit" class="btn btn-primary" value="Bul" />
+    </div>
+</form>
+<p>@ViewBag.Book</p>
+<p>@ViewBag.Author</p>

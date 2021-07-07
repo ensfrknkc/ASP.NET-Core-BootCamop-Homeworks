@@ -1,0 +1,53 @@
+﻿@model Comment
+<div class="row">
+    <div class="card col-md-12 text-center" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">@ViewBag.ContentDetail.Title</h5>
+            <h6 class="card-subtitle mb-2 text-muted">@ViewBag.ContentDetail.UpdateDate</h6>
+            <p class="card-text">@ViewBag.ContentDetail.Article</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-center">Yorumlar</h2>
+        @if (ViewBag.Comments != null)
+        {
+
+       
+        foreach (var comment in ViewBag.Comments)
+        {
+            if (comment.ContentId == ViewBag.ContentDetail.Id)
+            {
+                <h5>@comment.Rate</h5>
+                <h6>@comment.Description</h6>
+            }
+
+        }
+        }
+    </div>
+    <div class="col-6">
+        <form asp-action="AddComment">
+            <h3 class="text-center">Yorum Ekle</h3>
+            <input asp-for="ContentId" class="form-control" readonly  value="@ViewBag.ContentDetail.Id" type="hidden"/>
+            <div class="form-group">
+                <label asp-for="Rate">Rate</label>
+                <select class="form-control" asp-for="Rate">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description">Yorum</label>
+                <textarea class="form-control" asp-for="Description" rows="3"></textarea>
+            </div>
+
+            <input type="submit" class="btn btn-primary" value="Ekle" />
+        </form>
+    </div>
+</div>
+
+
